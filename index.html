@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sementes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>🌱 Calculadora de Sementes</h2>
+        <p>Calcule a quantidade necessária de sementes para o seu plantio.</p>
+        
+        <form id="seed-form">
+            <div class="input-group">
+                <label for="area">Área do Terreno (m²):</label>
+                <input type="number" id="area" placeholder="Ex: 500" required min="1">
+            </div>
+
+            <div class="input-group">
+                <label for="density">Sementes por m² (Recomendado):</label>
+                <input type="number" id="density" placeholder="Ex: 20" required min="1">
+            </div>
+
+            <div class="input-group">
+                <label for="germination">Taxa de Germinação (%):</label>
+                <input type="number" id="germination" placeholder="Ex: 85" required min="1" max="100" value="100">
+            </div>
+
+            <button type="button" onclick="calcularSementes()">Calcular Total</button>
+        </form>
+
+        <div id="result" class="result-box hidden">
+            <h3>Resultado:</h3>
+            <p id="total-seeds">Total de sementes: <span>0</span></p>
+            <p id="weight-estimate" class="sub-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
